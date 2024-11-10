@@ -5,7 +5,7 @@
 # Crash log files
 crash.log
 
-# Terraform variable files
+# Terraform variable files (may contain sensitive data)
 *.tfvars
 *.tfvars.json
 
@@ -22,13 +22,22 @@ override.tf.json
 .terraform/
 .terraform.lock.hcl
 
-# Sensitive files (e.g., credentials)
+# Sensitive files (e.g., credentials, keys, certificates)
 *.pem
 *.key
 *.p12
 *.cer
 *.crt
 *.der
+*.json  # JSON files may contain sensitive data (e.g., service account keys)
+
+# AWS credentials
+.aws/credentials
+.aws/config
+
+# Azure credentials
+*.azureauth
+*.azcli
 
 # Ignore backup files created by Terraform
 *.backup
